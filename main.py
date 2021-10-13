@@ -121,16 +121,32 @@ from robot import Robot
 droid_1 = Robot ()
 droid_1.set_name()
 droid_1.set_weapon()
-droid_1.health
+droid_1.set_health()
 
 
 dino = Dinosaur()
 dino.set_name()
 dino.set_attack_power()
-dino.health
+dino.set_health()
 
 random_battle = Battlefield()
 victor = random_battle.random_battle(droid_1, dino)
 print(victor)
 
+'''
+What is the task you are trying to accomplish? What is the goal? (answer below)
+    Have attacker subtract health from the attacked by using a class. The attack class in in the dinosaur.py or robot.py file and it is being called in the battlefield.py
 
+
+What do you think the problem or impediment is? (answer below)
+    the default health is being called every time, not the object's health
+
+
+What have you specifically tried in your code? (answer below)
+    set object to health, create method for health
+
+
+What did you learn by dropping a breakpoint? (if unable to run your app due to error, please state that below in your answer)
+    The code is walking/stepping through without errors but not returning numbers. I don't understand what the step through is returning and 
+    what is being skipped over
+'''

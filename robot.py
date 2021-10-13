@@ -18,3 +18,6 @@ class Robot:
     def set_weapon(self):
         weapon = Weapon()
         weapon.set_attribute()
+
+    def set_health(self):
+        return self.health

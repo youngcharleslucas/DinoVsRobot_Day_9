@@ -39,12 +39,12 @@ class Battlefield:
         self.victor = ""
         battle = True
         while battle == True:
-            select = Battlefield()
-            attack_robot = Dinosaur()
-            attack_dino = Robot()
-            select.random_select(robot,dino)
-            if select.random_select(robot,dino) == robot:
-                attack_robot.attack_from_robot(robot)
+            # select = Battlefield()
+            # attack_robot = Dinosaur()
+            # attack_dino = Robot()
+            self.random_select(robot,dino)
+            if self.random_select(robot,dino) == robot:
+                dino.attack_from_robot(robot)
                 print(f"Robot attack! {dino.name} health {dino.health}")
                 time.sleep(2)
                 if dino.health <= 0:
@@ -52,7 +52,7 @@ class Battlefield:
                     battle = False
                     break
             else:
-                attack_dino.attack_from_dino(dino)
+                robot.attack_from_dino(dino)
                 print(f"Dinosaur attack! {robot.name} health {robot.health}")
                 time.sleep(2)
                 if robot.health <= 0:
