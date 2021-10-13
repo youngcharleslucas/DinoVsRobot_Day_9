@@ -43,6 +43,8 @@ L.  (/2 points): As a developer, I want a Robot to have a power level and a Dino
 '''
 
 '''
+my pseudo code from UML
+
 class Robot:
     def __init__(self, name):
         self.name = 0
@@ -111,6 +113,23 @@ class Battlefield:
   
 
 '''
-
+import random
 from battlefield import Battlefield
+from dinosaur import Dinosaur
+from robot import Robot
 
+droid_1 = Robot ()
+droid_1.set_name()
+droid_1.set_weapon()
+
+
+dino = Dinosaur()
+dino.set_name()
+dino.set_attack_power()
+
+
+
+
+droid_1.attack_from_dino(dino)
+
+print(droid_1.health)
