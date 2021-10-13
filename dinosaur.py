@@ -12,7 +12,8 @@ class Dinosaur:
         self.attack_power = int(input(f"What is the attack power of {self.name}?"))
         print(f"The attack power of {self.name} is {self.attack_power}")
 
-    def attack (self, robot):
-        void
+    def attack_from_robot (self, robot):
+        self.health = self.health - robot.attack_power
+        return self.health
 
    
