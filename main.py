@@ -117,21 +117,23 @@ import random
 from battlefield import Battlefield
 from dinosaur import Dinosaur
 from robot import Robot
+from fleet import Fleet
+# droid_1 = Robot ()
+# droid_1.set_name()
+# droid_1.set_weapon()
+# droid_1.set_health()
 
-droid_1 = Robot ()
-droid_1.set_name()
-droid_1.set_weapon()
-droid_1.set_health()
 
+# dino = Dinosaur()
+# dino.set_name()
+# dino.set_attack_power()
+# dino.set_health()
 
-dino = Dinosaur()
-dino.set_name()
-dino.set_attack_power()
-dino.set_health()
+# random_battle = Battlefield()
+# victor = random_battle.random_battle(droid_1, dino)
+blades = Fleet()
 
-random_battle = Battlefield()
-victor = random_battle.random_battle(droid_1, dino)
-print(victor)
+print(blades.robot_saw.name, blades.robot_saw.weapon.name, blades.robot_saw.weapon.attack_power)
 
 '''
 What is the task you are trying to accomplish? What is the goal? (answer below)
