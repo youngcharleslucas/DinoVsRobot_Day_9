@@ -4,8 +4,8 @@ from dinosaur import Dinosaur
 import time
 class Battlefield:
     def __init__(self):
-        self.fleet.addFleet()
-        self.herd.addHerd()
+        # self.fleet.addFleet()
+        # self.herd.addHerd()
         self.victor = ""
     def run_game(self):
         void
@@ -29,7 +29,7 @@ class Battlefield:
         void
 
     def random_select(self, robot, dino):
-        select_number = random.randrange(1,2)
+        select_number = random.randint(1,2)
         if select_number == 1:
             return robot
         else:
@@ -37,22 +37,27 @@ class Battlefield:
 
     def random_battle (self, robot, dino):
         self.victor = ""
-        while True:
+        battle = True
+        while battle == True:
             select = Battlefield()
             attack_robot = Dinosaur()
             attack_dino = Robot()
-            attacker = select.random_select(robot,dino)
-            if attacker == robot:
+            select.random_select(robot,dino)
+            if select.random_select(robot,dino) == robot:
                 attack_robot.attack_from_robot(robot)
-                print("Robot attack!")
-            elif attacker == dino:
-                attack_dino.attack_from_dino(dino)
-                print("Dinosaur attack!")
-                if dino.health < 0:
+                print(f"Robot attack! {dino.name} health {dino.health}")
+                time.sleep(2)
+                if dino.health <= 0:
                     self.victor = robot
+                    battle = False
                     break
-                elif robot.health < 0:
+            else:
+                attack_dino.attack_from_dino(dino)
+                print(f"Dinosaur attack! {robot.name} health {robot.health}")
+                time.sleep(2)
+                if robot.health <= 0:
                     self.victor = dino
+                    battle = False
                     break
         return self.victor
 

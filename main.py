@@ -121,15 +121,16 @@ from robot import Robot
 droid_1 = Robot ()
 droid_1.set_name()
 droid_1.set_weapon()
+droid_1.health
 
 
 dino = Dinosaur()
 dino.set_name()
 dino.set_attack_power()
+dino.health
+
+random_battle = Battlefield()
+victor = random_battle.random_battle(droid_1, dino)
+print(victor)
 
 
-
-
-droid_1.attack_from_dino(dino)
-
-print(droid_1.health)
