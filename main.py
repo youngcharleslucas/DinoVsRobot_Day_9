@@ -43,7 +43,7 @@ L.  (/2 points): As a developer, I want a Robot to have a power level and a Dino
 '''
 
 '''
-class Robot
+class Robot:
     def __init__(self, name):
         self.name = 0
         self.health = 0
@@ -52,7 +52,7 @@ class Robot
     def attack (self, dinosaur):
         void
 
-class Dinosaur
+class Dinosaur:
     def __init__(self, name, attack_power):
         self.name = ""
         self.health = 0
@@ -61,26 +61,26 @@ class Dinosaur
     def attack (self, robot):
         void
 
-class Fleet
+class Fleet:
     def __init__(self):
         self.robots = []
 
     def create_fleet (self):
         void
 
-class Herd
+class Herd:
     def __init__(self):
         self.dinosaurs = []
     
     def create_herd (self):
         void
 
-class Weapon
+class Weapon:
     def __init__(self, name, attack_power):
         self.name = ""
         self.attack_power = 0
 
-class Battlefield
+class Battlefield:
     def __init__(self):
         self.fleet.addFleet()
         self.herd.addHerd()
@@ -106,9 +106,11 @@ class Battlefield
     def show_robo_opponent_options(self):
         void
 
-    display_winner(self):
+    def display_winner(self):
         void
   
 
-
 '''
+
+from battlefield import Battlefield
+
