@@ -132,6 +132,7 @@ from fleet import Fleet
 # random_battle = Battlefield()
 # victor = random_battle.random_battle(droid_1, dino)
 blades = Fleet()
+blades.saw_robot()
 
 print(blades.robot_saw.name, blades.robot_saw.weapon.name, blades.robot_saw.weapon.attack_power)
 
