@@ -16,8 +16,8 @@ class Robot:
         print ("Robot name is ", self.name)
 
     def set_weapon(self):
-        weapon = Weapon()
-        weapon.set_attribute()
+        self.weapon.set_attribute()
+        return self.weapon.attack_power
 
     def set_health(self):
         return self.health

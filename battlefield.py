@@ -1,6 +1,4 @@
 import random
-from robot import Robot
-from dinosaur import Dinosaur
 import time
 class Battlefield:
     def __init__(self):
@@ -39,9 +37,6 @@ class Battlefield:
         self.victor = ""
         battle = True
         while battle == True:
-            # select = Battlefield()
-            # attack_robot = Dinosaur()
-            # attack_dino = Robot()
             self.random_select(robot,dino)
             if self.random_select(robot,dino) == robot:
                 dino.attack_from_robot(robot)

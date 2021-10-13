@@ -1,4 +1,3 @@
-from robot import Robot
 class Dinosaur:
     def __init__(self):
         self.name = ""
@@ -14,7 +13,6 @@ class Dinosaur:
         print(f"The attack power of {self.name} is {self.attack_power}")
 
     def attack_from_robot (self, robot):
-        # robot = Robot()
         self.health = self.health - robot.weapon.attack_power
         return self.health
     def set_health (self):
