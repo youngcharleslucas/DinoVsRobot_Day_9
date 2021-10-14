@@ -26,6 +26,11 @@ class Battlefield:
     def show_robo_opponent_options(self):
         void
 
+    def attack_from_robot (self, dino, robot):
+        dino.health = dino.health - robot.weapon.attack_power
+        return dino.health
+
+
     def random_select(self, robot, dino):
         select_number = random.randint(1,2)
         if select_number == 1:
@@ -39,7 +44,7 @@ class Battlefield:
         while battle == True:
             self.random_select(robot,dino)
             if self.random_select(robot,dino) == robot:
-                dino.attack_from_robot(robot)
+                dino.attack_from_robot(dino, robot)
                 print(f"Robot attack! {dino.name} health {dino.health}")
                 time.sleep(2)
                 if dino.health <= 0:
@@ -47,7 +52,7 @@ class Battlefield:
                     battle = False
                     break
             else:
-                robot.attack_from_dino(dino)
+                robot.robot.attack_from_dino(dino)
                 print(f"Dinosaur attack! {robot.name} health {robot.health}")
                 time.sleep(2)
                 if robot.health <= 0:
