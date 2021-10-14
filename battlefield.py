@@ -46,7 +46,7 @@ class Battlefield:
         while battle == True:
             if self.random_select(robot,dino) == robot:
                 dino.health = dino.health - robot.weapon.attack_power
-                print(f"Robot attack! {dino.name} health {dino.health}")
+                print(f"{robot.name} attack with {robot.weapon.name}! {dino.name} health {dino.health}")
                 time.sleep(2)
                 if dino.health <= 0:
                     self.victor = robot.name
@@ -54,7 +54,7 @@ class Battlefield:
                     break
             else:
                 robot.health = robot.health - dino.attack_power
-                print(f"Dinosaur attack! {robot.name} health {robot.health}")
+                print(f"{dino.name} attack! {robot.name} health {robot.health}")
                 time.sleep(2)
                 if robot.health <= 0:
                     self.victor = dino.name

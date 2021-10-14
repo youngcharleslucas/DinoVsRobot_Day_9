@@ -119,39 +119,81 @@ from dinosaur import Dinosaur
 from robot import Robot
 from fleet import Fleet
 from herd import Herd
+import time
 
+
+print("Dinodaur vs. Robot! Monster against Machine! Who will win!")
+time.sleep(2)
+# Dionosaur Fighters-------------------------------------------------------------------
 
 trex = Dinosaur()
-trex.dino_character("T-rex", 15, 100)
+trex.dino_character("T-rex", 20, 100)
+ankly = Dinosaur()
+ankly.dino_character("Ankylosaurus", 10, 150)
+utah = Dinosaur()
+utah.dino_character("Utahraptor", 15, 125)
 
+
+# Robot fighters-----------------------------------------------------------------
 blades = Robot()
 blades.robot_character("Blades", "saw blades", 20, 100)
-
 laser = Robot()
-laser.robot_character("Laser-bot", "lasers", 15, 110)
+laser.robot_character("Laser-bot", "lasers", 15, 125)
+lava = Robot()
+lava.robot_character("Lava-bot", "molten metal", 10, 150)
+
+# Choosing fighters--------------------------------------------------------------
+def choose_dino ():
+    chosen = True
+    print("Choose your dinosaur for battle!!!")
+    time.sleep(1)
+    print(f"(0) Name: {trex.name}, Attack Power: {trex.attack_power}, Health: {trex.health}")
+    print(f"(1) Name: {ankly.name}, Attack Power: {ankly.attack_power}, Health: {ankly.health}")
+    print(f"(2) Name: {utah.name}, Attack Power: {utah.attack_power}, Health: {utah.health}")
+    while True:
+        select_dino = int(input("Enter the number next to the robot you choose: "))
+        if select_dino <= 2:
+            if select_dino == 0:
+                return trex
+                chosen = False
+            elif select_dino == 2: 
+                return ankly
+                chosen = False
+            else:
+                return utah
+                chosen = False
+        else:
+            print("Try another selection")
+
 
 def choose_robot ():
     chosen = True
-    print(f"Name: {blades.name}, Weapon: {blades.weapon.name}, Attack Power: {blades.weapon.attack_power}, Health: {blades.health}")
-    print(f"Name: {laser.name}, Weapon: {laser.weapon.name}, Attack Power: {laser.weapon.attack_power}, Health: {laser.health}")
+    print("Choose your robot for battle!!!")
+    time.sleep(1)
+    print(f"(0) Name: {blades.name}, Weapon: {blades.weapon.name}, Attack Power: {blades.weapon.attack_power}, Health: {blades.health}")
+    print(f"(1) Name: {laser.name}, Weapon: {laser.weapon.name}, Attack Power: {laser.weapon.attack_power}, Health: {laser.health}")
+    print(f"(2) Name: {lava.name}, Weapon: {lava.weapon.name}, Attack Power: {lava.weapon.attack_power}, Health: {lava.health}")
     while True:
         select_robot = int(input("Enter the number next to the robot you choose: "))
-        if select_robot <= 1:
+        if select_robot <= 2:
             if select_robot == 0:
                 return blades
                 chosen = False
+            elif select_robot == 2: 
+                return lava
+                chosen = False
             else:
                 return laser
-                Chosen = False
+                chosen = False
         else:
             print("Try another selection")
 
 robot_fighter = choose_robot()
+dino_fighter = choose_dino()
 
-
-
+# The random fight----------------------------------------------------------------------
 battle = Battlefield()
-victor = battle.random_battle(robot_fighter, trex)
+victor = battle.random_battle(robot_fighter, dino_fighter)
 
 print(victor, " is the victor!!!!")
 
@@ -159,18 +201,16 @@ print(victor, " is the victor!!!!")
 
 '''
 What is the task you are trying to accomplish? What is the goal? (answer below)
-    Have attacker subtract health from the attacked by using a class. The attack class in in the dinosaur.py or robot.py file and it is being called in the battlefield.py
-
-
+  
+  
 What do you think the problem or impediment is? (answer below)
-    the default health is being called every time, not the object's health
+ 
 
 
 What have you specifically tried in your code? (answer below)
-    set object to health, create method for health
+    
 
 
 What did you learn by dropping a breakpoint? (if unable to run your app due to error, please state that below in your answer)
-    The code is walking/stepping through without errors but not returning numbers. I don't understand what the step through is returning and 
-    what is being skipped over
+
 '''
