@@ -121,16 +121,16 @@ from fleet import Fleet
 from herd import Herd
 
 
+trex = Dinosaur()
+trex.dino_character("T-rex", 15, 100)
 
-Trex = Herd()
-trex = Trex.dino_trex()
-
-Blades = Fleet()
-blades = Blades.saw_robot()
+blades = Robot()
+blades.robot_character("Blades", "saw blades", 15, 100)
 
 battle = Battlefield()
-print (battle.random_battle(blades, trex))
+victor = battle.random_battle(blades, trex)
 
+print(victor)
 
 
 

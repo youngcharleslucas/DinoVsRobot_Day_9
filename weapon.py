@@ -5,7 +5,7 @@ class Weapon:
 
     def set_name (self, name):
         self.name = name
-        return self.attack_power
+        return self.name
     
     def set_power (self,power):
         self.attack_power = power
