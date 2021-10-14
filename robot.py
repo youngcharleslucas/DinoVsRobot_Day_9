@@ -26,3 +26,8 @@ class Robot:
 
     def set_health(self):
         return self.health
+
+    def robot_character(self, name, weapon_name, power):
+        self.set_name(name)
+        self.weapon.set_name(weapon_name)
+        self.weapon.set_power(power)
