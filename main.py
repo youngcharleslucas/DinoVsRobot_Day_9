@@ -125,12 +125,35 @@ trex = Dinosaur()
 trex.dino_character("T-rex", 15, 100)
 
 blades = Robot()
-blades.robot_character("Blades", "saw blades", 15, 100)
+blades.robot_character("Blades", "saw blades", 20, 100)
+
+laser = Robot()
+laser.robot_character("Laser-bot", "lasers", 15, 110)
+
+def choose_robot ():
+    chosen = True
+    print(f"Name: {blades.name}, Weapon: {blades.weapon.name}, Attack Power: {blades.weapon.attack_power}, Health: {blades.health}")
+    print(f"Name: {laser.name}, Weapon: {laser.weapon.name}, Attack Power: {laser.weapon.attack_power}, Health: {laser.health}")
+    while True:
+        select_robot = int(input("Enter the number next to the robot you choose: "))
+        if select_robot <= 1:
+            if select_robot == 0:
+                return blades
+                chosen = False
+            else:
+                return laser
+                Chosen = False
+        else:
+            print("Try another selection")
+
+robot_fighter = choose_robot()
+
+
 
 battle = Battlefield()
-victor = battle.random_battle(blades, trex)
+victor = battle.random_battle(robot_fighter, trex)
 
-print(victor)
+print(victor, " is the victor!!!!")
 
 
 

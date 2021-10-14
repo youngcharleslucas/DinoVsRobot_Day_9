@@ -5,13 +5,17 @@ class Fleet:
         self.robot_saw = Robot()
         self.robot_laser = Robot()
         self.robot_fire = Robot()
+        self.robot_list = [self.robot_saw.robot_character("Blades", "saw blades", 20, 100),self.robot_laser.robot_character("Laser-bot", "laser", 20, 100)]
+        
+    def list (self):
+        self.robot_list.append()
+        self.robot_list.append(self.robot_laser.robot_character("Laser-bot", "laser", 20, 100))
 
-
-    def saw_robot(self):
-        self.robot_saw.set_name("Blades")
-        self.robot_saw.set_weapon_name("saw blades")
-        self.robot_saw.set_weapon_power(13)
-        self.robot_saw.set_health(100)
+    # def saw_robot(self):
+    #     self.robot_saw.set_name("Blades")
+    #     self.robot_saw.set_weapon_name("saw blades")
+    #     self.robot_saw.set_weapon_power(13)
+    #     self.robot_saw.set_health(100)
 
 
         # self.robot_saw.robot_character("Blades", "saw blades", 13, 100)

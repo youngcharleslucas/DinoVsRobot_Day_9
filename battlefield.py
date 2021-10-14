@@ -13,7 +13,8 @@ class Battlefield:
     def display_welcome(self):
         void
 
-    def battle(self):
+    def choose_robot(self):
+        
         void
     
     def dino_turn(self, dinosaur):
